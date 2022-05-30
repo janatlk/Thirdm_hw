@@ -4,7 +4,7 @@ from decouple import config
 
 storage = MemoryStorage()
 
-photods = open("photos/unnamed1.jpg",'rb')
+photods = open("photos/unnamed.jpg",'rb')
 Token = config("CODE")
 bot = Bot(Token)
 dp = Dispatcher(bot=bot,storage=storage)

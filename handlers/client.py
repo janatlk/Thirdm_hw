@@ -1,7 +1,7 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
-
-from config import bot
+from HomeworkGit.parserhw import movies
+from HomeworkGit.config import bot,dp
 
 
 async def start(message: types.Message):
@@ -40,7 +40,7 @@ async def quiz1(message: types.Message):
         reply_markup=markup)
 
 
-photo = open(f"photos/ds.jpg", "rb")
+photo = open(f"photos/unnamed.jpg", "rb")
 
 
 async def mem(message: types.Message):
@@ -48,9 +48,9 @@ async def mem(message: types.Message):
     # await bot.send_message(message.chat.id,'photo')
 
 async def parser_(message: types.Message):
-    data = news.parser()
+    data = movies.parser()
     for i in data:
-        await bot.send_message(message.chat.id,f"{item['time']}\n\n{item['title']})\n{item['descr']}\n\n{item['link']}")
+        await bot.send_message(message.chat.id,f"{i['title']}\n\n{i['desc']})\n{i['link']}")
 
 
 async def pin(message: types.Message):
@@ -60,7 +60,7 @@ async def countmembers(message: types.Message):
 
 def register_handler(dp: Dispatcher):
     dp.register_message_handler(mem, commands=['mem'])
-    dp.register_message_handler(parser,commands=['news'])
+    dp.register_message_handler(parser_,commands=['news'])
     dp.register_message_handler(quiz1, commands=['quiz'])
     dp.register_message_handler(pin, commands=['pin'])
     dp.register_message_handler(countmembers, commands=['members'], commands_prefix="!/")

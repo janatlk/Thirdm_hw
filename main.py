@@ -1,7 +1,7 @@
-from config import dp
+from HomeworkGit.config import dp
 from aiogram.utils import executor
 import logging
-from handlers import extra, callback, client, admin, FSM, schedule
+from HomeworkGit.handlers import extra, callback, client, admin, FSM, schedule
 from database import bot_db
 # from repo import ефыл
 import asyncio
