@@ -1,7 +1,7 @@
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
-from HomeworkGit.parserhw import movies
-from HomeworkGit.config import bot,dp
+from parserhw import movies
+from config import bot,dp
 
 
 async def start(message: types.Message):
